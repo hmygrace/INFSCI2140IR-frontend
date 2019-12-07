@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark bg-primary justify-content-between">
+  <a class="navbar-brand col-2" style="margin-left: 5%;">JOB FINDER</a>
+  <form class="form-inline col-9" style="text-align: center;" [formGroup]="myForm" (ngSubmit)="submitForm(myForm)">
+    <input 
+     class="form-control col-7" 
+     type="search"
+     aria-label="Search"
+     style="margin-right: 1%;"
+     formControlName="query">
+    <select class="custom-select" style="margin-right: 3%;" formControlName="company">
+      <option *ngFor="let company of companyList" [value]="company">{{company}}</option>
+    </select>
+    <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
+  </form>
+</nav>
+<nav class="navbar navbar-dark bg-primary justify-content-between" style="padding-top: 0;">
+  <div style="width: 60%;margin: auto;" class="row">
+    <div style="margin: auto;color: white;" class="col-6 text-center"><a routerLink="/jobs">JOBS</a></div>
+    <div style="margin: auto;color: white;" class="col-6 text-center"><a routerLink="/saved">SAVED</a></div>
+  
+  </div>
+</nav>

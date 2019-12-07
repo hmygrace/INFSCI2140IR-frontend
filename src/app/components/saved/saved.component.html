@@ -1,0 +1,6 @@
+<div *ngIf="jobs.length>0">
+    <app-job-listing [jobs]=jobs [saved]="true"></app-job-listing>
+</div>
+<div *ngIf="jobs.length==0" style="text-align: center; padding-top: 50px;">
+  <h4>You haven't save any jobs</h4>
+</div>
