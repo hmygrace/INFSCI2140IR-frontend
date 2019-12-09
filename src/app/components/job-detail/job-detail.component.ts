@@ -16,6 +16,7 @@ export class JobDetailComponent implements OnInit {
     var retrive = localStorage.getItem("savedJobs");
     var newSave: Job[] = [];
     if(retrive==null){
+      job.saved = true;
       newSave.push(job);
     }else{
       newSave = JSON.parse(retrive);
@@ -26,10 +27,13 @@ export class JobDetailComponent implements OnInit {
           saved=true;
         }
       }
-      if(!saved)
+      if(!saved){
+        job.saved = true;
         newSave.push(job);
+      }
     }
     localStorage.setItem("savedJobs",JSON.stringify(newSave));
+    location.reload();
   }
 
   unsaveJob(job: Job){
@@ -42,11 +46,14 @@ export class JobDetailComponent implements OnInit {
       newSave = JSON.parse(retrive);
       for(var i=0;i<newSave.length;i++){
         if(newSave[i].id==job.id){
-          newSave.splice(i);
+          newSave.splice(i,1);
+          job.saved = false;
+          break;
         }
       }
     }
     localStorage.setItem("savedJobs",JSON.stringify(newSave));
+    console.log(newSave);
     location.reload();
   }
 

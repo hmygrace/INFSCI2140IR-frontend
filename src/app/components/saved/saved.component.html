@@ -1,4 +1,4 @@
-<div *ngIf="jobs.length>0">
+<div *ngIf="jobs.length>0" class='fullHeight'>
     <app-job-listing [jobs]=jobs [saved]="true"></app-job-listing>
 </div>
 <div *ngIf="jobs.length==0" style="text-align: center; padding-top: 50px;">

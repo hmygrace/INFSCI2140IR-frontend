@@ -18,9 +18,9 @@
       <div class="row" style="margin-bottom: 30px;">
         <div class="col-3"></div>
         <div class="col-9">
-            <button class="btn btn-info" style="margin-right: 10px;" href="job.link">Apply</button>
-            <button *ngIf="!saved" class="btn btn-outline-info" (click)="saveJob(job)">Save</button>
-            <button *ngIf="saved" class="btn btn-outline-info" (click)="unsaveJob(job)">Unsave</button>
+            <button class="btn btn-info" style="margin-right: 10px;" ><a href={{job.link}} target="_blank" style="text-decoration: none;color: white;">Apply</a></button>
+            <button *ngIf="!job.saved" class="btn btn-outline-info" (click)="saveJob(job)">Save</button>
+            <button *ngIf="job.saved" class="btn btn-outline-info" (click)="unsaveJob(job)">Unsave</button>
         </div>
       </div>
       <hr width="80%" size="10" style="text-align: center;">
