@@ -6,7 +6,7 @@
             
               <!-- job list -->
               <div *ngIf="jobs.length>0">
-                  <div *ngFor="let job of jobs">
+                  <div *ngFor="let job of jobs | paginate: { itemsPerPage: 10, currentPage: p }">
                     <div class="card" style="width: 100%;padding: 0;">
                       <div class="card-body">
                         <div class="row">
@@ -24,6 +24,7 @@
                       </div>
                     </div>
                   </div>
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
               <div *ngIf="jobs.length==0">
                 <p>No results</p>

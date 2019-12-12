@@ -12,7 +12,7 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
   //search
-  search(query: string, company:string): Observable<Job[]>{
-    return this.http.get<Job[]>(environment.apiUrl+"/jobs/search?query="+query+"&company="+company);
+  search(query: string, location:string, company:string): Observable<Job[]>{
+    return this.http.get<Job[]>(environment.apiUrl+"/jobs/search?query="+query+"&location="+location+"&company="+company);
   }
 }

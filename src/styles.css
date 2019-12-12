@@ -4,3 +4,8 @@
     overflow: hidden;
 }
 html, body {margin:0;padding:0;height:100%;}
+
+strong{
+    font-weight: bolder;
+    background-color: yellow;
+}

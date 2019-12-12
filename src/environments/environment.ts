@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   // apiUrl: "http://localhost:8080"
-  apiUrl: "https://secret-atoll-92217.herokuapp.com"
+  // apiUrl: "https://secret-atoll-92217.herokuapp.com"
+  apiUrl:"https://job-helper1.herokuapp.com"
 };
 
 /*

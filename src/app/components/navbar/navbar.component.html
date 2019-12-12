@@ -2,11 +2,20 @@
   <a class="navbar-brand col-2" style="margin-left: 5%;">JOB FINDER</a>
   <form class="form-inline col-9" style="text-align: center;" [formGroup]="myForm" (ngSubmit)="submitForm(myForm)">
     <input 
-     class="form-control col-7" 
+     class="form-control col-5" 
      type="search"
+     placeholder="Search"
      aria-label="Search"
+     placeholder="Search"
      style="margin-right: 1%;"
      formControlName="query">
+     <input 
+     class="form-control col-2" 
+     type="search"
+     placeholder="Location"
+     aria-label="Location"
+     style="margin-right: 1%;"
+     formControlName="location">
     <select class="custom-select" style="margin-right: 3%;" formControlName="company" value="{{last_company}}">
       <option *ngFor="let company of companyList" value="{{company}}">{{company}}</option>
     </select>

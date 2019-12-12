@@ -12,6 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    GooglePlaceModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

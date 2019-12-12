@@ -18,6 +18,7 @@ import { JobdataService } from 'src/app/service/jobdata.service';
 export class NavbarComponent implements OnInit {
 
   last_query: string;
+  last_location: string;
   last_company: string;
   myForm: FormGroup;
   companyList: String[] = [
@@ -26,10 +27,15 @@ export class NavbarComponent implements OnInit {
     "Apple",
     "Netflix"
   ];
+  options = {
+    types: ['(cities)'],
+    componetRestrictions: {country: "us"}
+  };
 
   private createForm() {
     this.myForm = this.formBuilder.group({
       query: [this.last_query?this.last_query:""],
+      location: [this.last_location? this.last_location:""],
       company: [this.last_company?this.last_company:"company"],//
     });
   }
@@ -38,6 +44,7 @@ export class NavbarComponent implements OnInit {
       this.last_query = value.query;
       console.log("query: "+value.query+"  company: "+value.company);
       localStorage.setItem("last_query",this.last_query);
+      localStorage.setItem("last_location",value.location);
       localStorage.setItem("last_company",value.company);
       location.reload();
       // this.searchService.search(value.query,value.company).subscribe(
@@ -64,6 +71,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     var query = localStorage.getItem("last_query");
     this.last_query =query;
+    var location = localStorage.getItem("last_location");
+    this.last_location =location;
     var company = localStorage.getItem("last_company");
     this.last_company = company?company:"company";
     this.createForm();
